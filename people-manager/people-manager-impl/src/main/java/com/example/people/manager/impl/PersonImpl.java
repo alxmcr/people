@@ -5,6 +5,7 @@ import com.example.people.manager.impl.mapper.PersonMapper;
 import com.example.people.manager.local.PersonLocal;
 import com.example.people.manager.serv.PersonServ;
 import com.example.people.manager.serv.data.Person;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Local;
 import javax.ejb.Stateless;
@@ -18,6 +19,18 @@ public class PersonImpl implements PersonServ {
 
     @EJB
     private PersonLocal local;
+
+    @Override
+    public List<Person> findAllPeople() throws Exception {
+        List<PePerson> list = local.findAllPeople();
+        return PersonMapper.mapperToPersonList(list);
+    }
+
+    @Override
+    public Person findPerson(Person value) throws Exception {
+        PePerson entity = local.findPerson(value.getPersonId());
+        return PersonMapper.mapperToPerson(entity);
+    }
 
     @Override
     public Person createPerson(Person value) throws Exception {
@@ -39,11 +52,4 @@ public class PersonImpl implements PersonServ {
         entity = local.removePerson(entity);
         return PersonMapper.mapperToPerson(entity);
     }
-
-    @Override
-    public Person findPerson(Person value) throws Exception {
-        PePerson entity = local.findPerson(value.getPersonId());
-        return PersonMapper.mapperToPerson(entity);
-    }
-
 }

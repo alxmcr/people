@@ -2,6 +2,7 @@ package com.example.people.manager.view;
 
 import com.example.people.manager.serv.PersonServ;
 import com.example.people.manager.serv.data.Person;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -27,7 +28,14 @@ public class PersonRest {
     }
 
     @GET
-    @Path("find")
+    @Path("findallpeople")
+    public List<Person> findAllPeople(Person value) throws Exception {
+        List<Person> list = serv.findAllPeople();
+        return list;
+    }
+
+    @GET
+    @Path("findperson")
     public Person findPerson(Person value) throws Exception {
         return serv.findPerson(value);
     }
