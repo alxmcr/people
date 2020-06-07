@@ -1,0 +1,7 @@
+<jboss-web version="8.0" xmlns="http://www.jboss.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.jboss.com/xml/ns/javaee http://www.jboss.org/schema/jbossas/jboss-web_8_0.xsd">
+    <context-root>/people-manager</context-root>
+    <resource-ref>
+        <res-ref-name>jdbc/people-manager</res-ref-name>
+        <jndi-name>java:jboss/datasources/PeopleDS</jndi-name>
+    </resource-ref>
+</jboss-web>
