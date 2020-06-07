@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>people</artifactId>
+        <version>1.0.0.0</version>
+    </parent>
+    <artifactId>people-manager</artifactId>
+    <version>1.0.0.0</version>
+    <packaging>pom</packaging>
+    <name>people-manager</name>
+    <description>People manager</description>
+    <modules>
+        <module>people-manager-view</module>
+        <module>people-manager-impl</module>
+        <module>people-manager-local</module>
+        <module>people-manager-serv</module>
+    </modules>
+</project>
