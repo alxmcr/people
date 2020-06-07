@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<entity-mappings ptype="MONOLITH" ppkg="com.example.people" epkg="entity" v="5.4.1" rws="_15915629847952" Pws="_15915629847952" cws="_15915629847952" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_15915629847941" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <entity compositePrimaryKeyClass="PePersonPK" abs="false" class="PePerson" v="true" jbn="false" xre="false" m="false" rootElement="_15915629847941" id="_15915629901593">
+        <inf e="true" n="java.io.Serializable"/>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="code" id="_15915630355918">
+                <xwm/>
+                <xm/>
+                <column name="CODE_" unique="false" nullable="true" insertable="true" updatable="true" column-definition="VARCHAR(10)" length="10"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="name" id="_15915630259736">
+                <xwm/>
+                <xm/>
+                <column name="NAME_" unique="false" nullable="true" insertable="true" updatable="true" column-definition="VARCHAR(50)" length="50"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="lastname" id="_15915630291327">
+                <xwm/>
+                <xm/>
+                <column name="LASTNAME" unique="false" nullable="true" insertable="true" updatable="true" column-definition="VARCHAR(100)" length="100"/>
+            </basic>
+            <id attribute-type="Long" v="true" xvt="" name="personId" ft="false" id="_15915629903144">
+                <xwm/>
+                <xm/>
+                <bv>
+                    <nn m="ID Person is required"/>
+                </bv>
+                <column name="PERSON_ID" unique="true" nullable="false" insertable="true" updatable="true" column-definition="INTEGER" precision="0"/>
+                <generated-value strategy="SEQUENCE" generator="PE_PERSON"/>
+                <sequence-generator name="PE_PERSON" sequence-name="PE_PERSON" catalog="" schema="" initial-value="1" allocation-size="1"/>
+            </id>
+        </attributes>
+        <nq e="false" name="PePerson.findAll">
+            <query>Select e from PePerson e</query>
+        </nq>
+        <nq e="false" name="PePerson.findByName">
+            <query>Select p from PePerson p where p.name=:name</query>
+        </nq>
+        <nq e="false" name="PePerson.findByLastname">
+            <query>Select p from PePerson p where p.lastname=:lastname</query>
+        </nq>
+        <nq e="false" name="PePerson.findByCode">
+            <query>Select p from PePerson p where p.code=:code</query>
+        </nq>
+        <table name="PE_PERSON"/>
+    </entity>
+    <c/>
+    <wsl>
+        <ws n="Main" id="_15915629847952">
+            <i ref="_15915629901593" x="137" y="107"/>
+        </ws>
+    </wsl>
+</entity-mappings>
