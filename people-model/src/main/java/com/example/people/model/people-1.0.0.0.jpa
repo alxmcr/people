@@ -25,8 +25,8 @@
                     <nn m="ID Person is required"/>
                 </bv>
                 <column name="PERSON_ID" unique="true" nullable="false" insertable="true" updatable="true" column-definition="INTEGER" precision="0"/>
-                <generated-value strategy="SEQUENCE" generator="PE_PERSON"/>
-                <sequence-generator name="PE_PERSON" sequence-name="PE_PERSON" catalog="" schema="" initial-value="1" allocation-size="1"/>
+                <generated-value strategy="SEQUENCE" generator="PE_SEQ_PERSON"/>
+                <sequence-generator name="PE_SEQ_PERSON" sequence-name="PE_SEQ_PERSON" catalog="" schema="" initial-value="1" allocation-size="1"/>
             </id>
         </attributes>
         <nq e="false" name="PePerson.findAll">
