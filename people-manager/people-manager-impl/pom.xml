@@ -12,11 +12,23 @@
     <name>people-manager-impl</name>
     <description>People: Implementation</description>
     <properties>
+        <people-manager-serv.version>1.0.0.0</people-manager-serv.version>
+        <people-manager-local.version>1.0.0.0</people-manager-local.version>
         <maven.compiler.source>12</maven.compiler.source>
         <maven.compiler.target>12</maven.compiler.target>
         <javaee-api.version>8.0.1</javaee-api.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>people-manager-local</artifactId>
+            <version>${people-manager-local.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>people-manager-serv</artifactId>
+            <version>${people-manager-serv.version}</version>
+        </dependency>
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
