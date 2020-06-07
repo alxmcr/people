@@ -13,14 +13,21 @@
     <name>people-manager-view</name>
     <description>People: View</description>
     <properties>
+        <people-manager-impl.version>1.0.0.0</people-manager-impl.version>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <javaee-web-api.version>7.0</javaee-web-api.version>
     </properties>
     <dependencies>
         <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>people-manager-impl</artifactId>
+            <version>${people-manager-impl.version}</version>
+        </dependency>
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
-            <version>7.0</version>
+            <version>${javaee-web-api.version}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
