@@ -27,8 +27,8 @@ public class PersonImpl implements PersonServ {
     }
 
     @Override
-    public Person findPerson(Person value) throws Exception {
-        PePerson entity = local.findPerson(value.getPersonId());
+    public Person findPerson(Long personId) throws Exception {
+        PePerson entity = local.findPerson(personId);
         return PersonMapper.mapperToPerson(entity);
     }
 
@@ -40,15 +40,21 @@ public class PersonImpl implements PersonServ {
     }
 
     @Override
-    public Person updatePerson(Person value) throws Exception {
-        PePerson entity = PersonMapper.mapperToPePerson(value);
+    public Person updatePerson(Long personId, Person valueUpdated) throws Exception {
+        // Find
+        PePerson entity = local.findPerson(personId);
+        // Set Id
+        valueUpdated.setPersonId(personId);
+        // Pass values updated
+        PersonMapper.mapperToPePerson(valueUpdated, entity);
+        // Update in the database
         entity = local.updatePerson(entity);
         return PersonMapper.mapperToPerson(entity);
     }
 
     @Override
-    public Person removePerson(Person value) throws Exception {
-        PePerson entity = local.findPerson(value.getPersonId());
+    public Person removePerson(Long personId) throws Exception {
+        PePerson entity = local.findPerson(personId);
         entity = local.removePerson(entity);
         return PersonMapper.mapperToPerson(entity);
     }

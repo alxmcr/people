@@ -7,14 +7,14 @@ import java.util.List;
 
 public class PersonMapper {
 
-    private static void mapperToPePerson(Person from, PePerson to) {
+    public static void mapperToPePerson(Person from, PePerson to) {
         to.setPersonId(from.getPersonId());
         to.setCode(from.getCode());
         to.setName(from.getName());
         to.setLastname(from.getLastname());
     }
 
-    private static void mapperToPerson(PePerson from, Person to) {
+    public static void mapperToPerson(PePerson from, Person to) {
         to.setPersonId(from.getPersonId());
         to.setCode(from.getCode());
         to.setName(from.getName());

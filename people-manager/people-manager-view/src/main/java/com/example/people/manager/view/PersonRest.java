@@ -10,6 +10,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -28,33 +29,31 @@ public class PersonRest {
     }
 
     @GET
-    @Path("findallpeople")
     public List<Person> findAllPeople(Person value) throws Exception {
         List<Person> list = serv.findAllPeople();
         return list;
     }
 
     @GET
-    @Path("findperson")
-    public Person findPerson(Person value) throws Exception {
-        return serv.findPerson(value);
+    @Path("/{personId}")
+    public Person findPerson(@PathParam("personId") Long personId) throws Exception {
+        return serv.findPerson(personId);
     }
 
     @POST
-    @Path("create")
     public Person createPerson(Person value) throws Exception {
         return serv.createPerson(value);
     }
 
     @PUT
-    @Path("update")
-    public Person updatePerson(Person value) throws Exception {
-        return serv.updatePerson(value);
+    @Path("/{personId}")
+    public Person updatePerson(@PathParam("personId") Long personId, Person value) throws Exception {
+        return serv.updatePerson(personId, value);
     }
 
     @DELETE
-    @Path("remove")
-    public Person removePerson(Person value) throws Exception {
-        return serv.removePerson(value);
+    @Path("/{personId}")
+    public Person removePerson(@PathParam("personId") Long personId) throws Exception {
+        return serv.removePerson(personId);
     }
 }
