@@ -16,8 +16,8 @@ import javax.validation.constraints.NotNull;
 public class PePerson implements Serializable {
 
     @Id
-    @GeneratedValue(generator = "PE_PERSON", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "PE_PERSON", sequenceName = "PE_PERSON", allocationSize = 1)
+    @GeneratedValue(generator = "PE_SEQ_PERSON", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "PE_SEQ_PERSON", sequenceName = "PE_PERSON", allocationSize = 1)
     @Column(name = "PERSON_ID", unique = true, nullable = false, columnDefinition = "INTEGER")
     @NotNull(message = "ID Person is required")
     private Long personId;
